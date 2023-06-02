@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Apostador {
+    -efectivo : double
+    -nombre : String
+    +sacarDineroDeLaCuenta(dinero)
+    +depositarDinero(dinero)
+    +apostarDinero(TasasDeApuesta apuesta)
+
+}
+
+class CuentaBancaria{
+-dinero : double
+-numeroDeCuenta : String
++verificarFondos()
+
+
+}
+Apostador --> CuentaBancaria
+class JuegoDeApuesta{
+- dineroApostado : double
++inscribirApostadores(Apostador[])
++recojerApuestas()
++anunciarGanadores()
++entregrarPremioAGanadores()
+
+
+}
+JuegoDeApuesta -l-> "*"Apostador
+JuegoDeApuesta -l-> "*"Apostador
+enum TasasDeApuesta{
+DIEZ
+VEINTE
+TREINTA
+CUARENTA
+}
+Apostador ..> TasasDeApuesta
+enum Equipo{
+A
+B
+}
+JuegoDeApuesta ..> Equipo
+
+
+
+
+@enduml

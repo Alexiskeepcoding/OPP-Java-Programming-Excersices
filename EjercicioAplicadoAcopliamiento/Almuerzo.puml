@@ -1,0 +1,47 @@
+@startuml
+
+class Comedor{
+    - facturar()
+}
+class Almuerzo {
+    - precio: double
+    + comprar ()
+    + recalcularPrecio()
+
+}
+
+class Sopa {
+
+}
+
+class Segundo{
+
+}
+
+class Jugo {
+}
+
+class Postre{
+
+}
+
+
+class Ingrediente{
+
+}
+
+Comedor --> "*"Almuerzo
+Almuerzo --> Sopa : sopa
+Almuerzo --> Segundo: segundo
+Almuerzo --> Jugo : jugo
+Almuerzo --> Postre : postre
+
+Sopa --> "*"Ingrediente
+Segundo --> "*" Ingrediente
+Jugo --> "*"Ingrediente
+Postre --> "*"Ingrediente
+
+
+
+
+@enduml

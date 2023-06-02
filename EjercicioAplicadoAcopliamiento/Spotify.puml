@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Spotify {
+    + registrarUsuario
+
+}
+
+class Podcast{
+
+}
+
+class Gratuidad{
+
+}
+
+class Premium{
+    + next()
+}
+class Anuncio{
+    + duracion : int
+}
+
+class VideoDigital{
+
+}
+
+class Musica {
+
+}
+
+class Genero{
+
+}
+
+class Usuario {
+    + Elejir(): boolean
+}
+
+Usuario --> "*"Musica
+Usuario --> "*"Podcast
+Usuario --> "*"VideoDigital
+
+
+
+Spotify --> Usuario
+Usuario --> Gratuidad
+Usuario --> Premium
+
+Gratuidad --> Anuncio
+
+
+Musica --> Genero
+
+
+
+@enduml
